@@ -12,6 +12,41 @@
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {}
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "foliodex",
+          "name": "foliodex"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "foliodex",
+      "properties": {
+        "foliodex.folderDeiscriptions": {
+          "type": "array",
+          "description": "My setting description.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "folder path"
+              },
+              "description": {
+                "type": "string",
+                "description": "description of folder"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
